@@ -5,7 +5,7 @@
 .react-calculator {
     position: relative;
     margin: 0 auto;
-    width: 440px;
+    width: 700px;
 
     box-shadow: 0 15px 45px rgba(19, 19, 19, .24), 0 15px 45px rgba(19, 19, 19, .12);
 }
@@ -83,7 +83,7 @@ hover::-webkit-scrollbar:horizontal,
 .display {
     /*Positioning*/
     position: relative;
-    width: 440px;
+    width: 700px;
     height: 120px;
     z-index: 10;
 
@@ -103,6 +103,61 @@ hover::-webkit-scrollbar:horizontal,
     background-color: rgba(19, 19, 19, .64);
     color: #FFE66D;
 }
+.memory {
+    /*Positioning*/
+    position: absolute;
+    top: 120px;
+    left: 0;
+    z-index: 10;
+
+    /*Formatting*/
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+
+    /*Colors*/
+    background-color: rgba(19, 19, 19, .64);
+    color: #00a3f5;
+
+    /*Animation*/
+    -webkit-transition: height 150ms cubic-bezier(1, 1, 1, 1),
+    overflow 1ms cubic-bezier(1, 1, 1, 1) 200ms,
+    padding 1ms cubic-bezier(1, 1, 1, 1) 200ms;
+
+    transition: height 150ms cubic-bezier(1, 1, 1, 1),
+    overflow 1ms cubic-bezier(1, 1, 1, 1) 200ms,
+    padding 1ms cubic-bezier(1, 1, 1, 1) 200ms;
+}
+
+.memory .toggle-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+}
+
+.memory .toggle-close .title {
+    display: inline-block;
+
+    /*Rotation - plus sign*/
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.memory.visible {
+    /*Formatting*/
+    height: calc(100% - 120px);
+    padding: 10px;
+
+    /*Overflow*/
+    overflow-y: auto;
+
+    /*Animation*/
+    -webkit-transition: height 200ms cubic-bezier(1, 1, 1, 1), padding 1ms cubic-bezier(1, 1, 1, 1);
+    transition: height 200ms cubic-bezier(1, 1, 1, 1), padding 1ms cubic-bezier(1, 1, 1, 1);
+}
+
 
 .history {
     /*Positioning*/
